@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Derek Haber — Offensive Security Operator specializing in offensive consulting and AI-augmented assessments.">
+    <title>Derek Haber | Offensive Security</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-inner">
+            <a href="#home" class="nav-logo">DH<span class="accent">.</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#publications">Publications</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#expertise">Expertise</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#publications">Publications</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <canvas id="heroCanvas"></canvas>
+        <div class="hero-content">
+            <div class="hero-label mono">Offensive Security Operator @ Armadin</div>
+            <h1 class="hero-name glitch" data-text="Derek Haber">Derek Haber</h1>
+            <div class="hero-subtitle">
+                <span class="mono accent">~/</span>
+                <span id="typewriter"></span><span class="cursor">_</span>
+            </div>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">View Work</a>
+                <a href="https://github.com/derekhaber" target="_blank" rel="noopener" class="btn btn-ghost">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-label mono reveal">01 / About</div>
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <h2>Breaking things<br><span class="accent">before others do.</span></h2>
+                    <p>I'm an offensive security professional specializing in web application security and adversarial consulting. At <a href="https://armadin.com" target="_blank" rel="noopener" class="text-link">Armadin</a>, I conduct targeted offensive engagements — identifying vulnerabilities before adversaries do and translating findings into actionable intelligence.</p>
+                    <p>With a background in application security engineering, I bridge the gap between builder and breaker, bringing a developer's intuition to offensive work. I also integrate AI tooling into security assessments, augmenting coverage and accelerating vulnerability discovery at scale.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/derek-haber/" target="_blank" rel="noopener" class="social-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                            LinkedIn
+                        </a>
+                        <a href="https://github.com/derekhaber" target="_blank" rel="noopener" class="social-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="about-stats reveal reveal-delay-1">
+                    <div class="stat-card">
+                        <div class="stat-dot"></div>
+                        <div>
+                            <div class="stat-title mono">Focus Area</div>
+                            <div class="stat-value">Web Application Security</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-dot"></div>
+                        <div>
+                            <div class="stat-title mono">Engagement Type</div>
+                            <div class="stat-value">Offensive Consulting</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-dot"></div>
+                        <div>
+                            <div class="stat-title mono">Employer</div>
+                            <div class="stat-value">Armadin</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-dot"></div>
+                        <div>
+                            <div class="stat-title mono">Specialization</div>
+                            <div class="stat-value">AI-Augmented Assessments</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise -->
+    <section id="expertise" class="section section-alt">
+        <div class="container">
+            <div class="section-label mono reveal">02 / Expertise</div>
+            <h2 class="section-title reveal">What I Do</h2>
+            <div class="expertise-grid">
+
+                <div class="expertise-card reveal reveal-delay-1">
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="24" cy="24" r="18"/>
+                            <circle cx="24" cy="24" r="8"/>
+                            <line x1="24" y1="6" x2="24" y2="16"/>
+                            <line x1="24" y1="32" x2="24" y2="42"/>
+                            <line x1="6" y1="24" x2="16" y2="24"/>
+                            <line x1="32" y1="24" x2="42" y2="24"/>
+                            <circle cx="24" cy="24" r="2" fill="currentColor" stroke="none"/>
+                        </svg>
+                    </div>
+                    <h3>Offensive Security Consulting</h3>
+                    <p>Adversarial assessments that go beyond automated scanning. I simulate real-world threat actors, giving organizations an unfiltered view of their attack surface and true risk exposure.</p>
+                    <div class="expertise-tags">
+                        <span class="tag mono">Red Teaming</span>
+                        <span class="tag mono">Threat Modeling</span>
+                        <span class="tag mono">Attack Simulation</span>
+                        <span class="tag mono">Risk Assessment</span>
+                    </div>
+                </div>
+
+                <div class="expertise-card reveal reveal-delay-2">
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="6" y="10" width="36" height="28" rx="3"/>
+                            <polyline points="14,30 20,22 26,28 32,18 38,24" stroke-linejoin="round" stroke-linecap="round"/>
+                            <circle cx="14" cy="30" r="2" fill="currentColor" stroke="none"/>
+                            <circle cx="38" cy="24" r="2" fill="currentColor" stroke="none"/>
+                        </svg>
+                    </div>
+                    <h3>AI-Augmented Assessments</h3>
+                    <p>Leveraging large language models and AI tooling to enhance offensive security workflows — from intelligent reconnaissance to automated vulnerability analysis and coverage at scale.</p>
+                    <div class="expertise-tags">
+                        <span class="tag mono">LLM-Assisted Recon</span>
+                        <span class="tag mono">Intelligent Fuzzing</span>
+                        <span class="tag mono">Automated Analysis</span>
+                        <span class="tag mono">AI Security</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-label mono reveal">03 / Projects</div>
+            <h2 class="section-title reveal">Public Projects</h2>
+            <div class="projects-grid">
+
+                <article class="project-card reveal reveal-delay-1">
+                    <div class="project-header">
+                        <span class="project-number mono">01</span>
+                        <div class="project-links">
+                            <a href="https://github.com/DerekHaber/Argus-Proxy" target="_blank" rel="noopener" class="icon-link" aria-label="GitHub">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="project-name">Argus Proxy</h3>
+                    <p class="project-desc">Lightweight Java-based HTTP intercepting proxy and web application security scanner. Features real-time traffic interception, active/passive scanning (XSS, SQLi, path traversal, header misconfigs), a fuzzer, request repeater, and spider.</p>
+                    <div class="project-tags">
+                        <span class="tag mono">Java</span>
+                        <span class="tag mono">Proxy</span>
+                        <span class="tag mono">Web Security</span>
+                        <span class="tag mono">Scanner</span>
+                    </div>
+                </article>
+
+                <article class="project-card reveal reveal-delay-2">
+                    <div class="project-header">
+                        <span class="project-number mono">02</span>
+                        <div class="project-links">
+                            <a href="https://github.com/DerekHaber/justcandid" target="_blank" rel="noopener" class="icon-link" aria-label="GitHub">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+                            </a>
+                            <a href="https://justcandid.net" target="_blank" rel="noopener" class="icon-link" aria-label="Live site">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="project-name">Candid</h3>
+                    <p class="project-desc">Mobile app for sharing vintage-filtered photos exclusively with your close friend group. No public feeds, no algorithmic discovery — only your circle can see your posts.</p>
+                    <div class="project-tags">
+                        <span class="tag mono">TypeScript</span>
+                        <span class="tag mono">Mobile</span>
+                        <span class="tag mono">Social</span>
+                    </div>
+                </article>
+
+                <!--
+                <article class="project-card placeholder-card reveal reveal-delay-1">
+                    <div class="project-header">
+                        <span class="project-number mono">03</span>
+                        <div class="project-links"></div>
+                    </div>
+                    <h3 class="project-name">Project Title</h3>
+                    <p class="project-desc">Project details coming soon.</p>
+                    <div class="project-tags">
+                        <span class="tag mono">Coming Soon</span>
+                    </div>
+                </article>
+                -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" class="section section-alt">
+        <div class="container">
+            <div class="section-label mono reveal">04 / Publications</div>
+            <h2 class="section-title reveal">Research &amp; Writing</h2>
+
+            <div class="pub-section reveal">
+                <h3 class="pub-category mono"><span class="accent">//</span> CVEs</h3>
+                <div class="pub-list">
+                    <article class="pub-card">
+                        <div class="pub-meta">
+                            <span class="pub-id mono accent">CVE-2025-52888</span>
+                            <span class="pub-date mono">Jun 2025</span>
+                        </div>
+                        <h4 class="pub-title">XXE Injection in Allure 2 XML Parsing Plugins — Allure Framework</h4>
+                        <p class="pub-desc">XML External Entity injection in Allure 2's xunit, JUnit, and TRX result-processing plugins. Unsafe <code>DocumentBuilderFactory</code> configuration allows arbitrary file read and SSRF via crafted test result XML in CI/CD pipelines. CVSS 7.5 (High). Fixed in v2.34.1.</p>
+                        <a href="https://github.com/allure-framework/allure2/security/advisories/GHSA-h7qf-qmf3-85qg" target="_blank" rel="noopener" class="pub-link mono">View Advisory →</a>
+                    </article>
+                    <!--
+                    <article class="pub-card">
+                        <div class="pub-meta">
+                            <span class="pub-id mono accent">CVE-XXXX-XXXXX</span>
+                            <span class="pub-date mono">—</span>
+                        </div>
+                        <h4 class="pub-title">CVE Title / Affected Product</h4>
+                        <p class="pub-desc">Advisory details and vulnerability description will be added here.</p>
+                        <a href="#" class="pub-link mono">View Advisory →</a>
+                    </article>
+                    -->
+                </div>
+            </div>
+
+            <!--
+            <div class="pub-section reveal reveal-delay-1">
+                <h3 class="pub-category mono"><span class="accent">//</span> Blog Posts</h3>
+                <div class="pub-list">
+                    <article class="pub-card">
+                        <div class="pub-meta">
+                            <span class="pub-date mono">Coming Soon</span>
+                        </div>
+                        <h4 class="pub-title">Blog Post Title</h4>
+                        <p class="pub-desc">Post summary or excerpt will appear here once published.</p>
+                        <a href="#" class="pub-link mono">Read Post →</a>
+                    </article>
+                    <article class="pub-card">
+                        <div class="pub-meta">
+                            <span class="pub-date mono">Coming Soon</span>
+                        </div>
+                        <h4 class="pub-title">Blog Post Title</h4>
+                        <p class="pub-desc">Post summary or excerpt will appear here once published.</p>
+                        <a href="#" class="pub-link mono">Read Post →</a>
+                    </article>
+                </div>
+            </div>
+            -->
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-left">
+                    <span class="footer-name mono">Derek Haber</span>
+                    <span class="footer-sep">—</span>
+                    <span class="footer-role">Offensive Security Operator</span>
+                </div>
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/derek-haber/" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://github.com/derekhaber" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://armadin.com" target="_blank" rel="noopener">Armadin</a>
+                </div>
+            </div>
+            <div class="footer-copy mono">© 2026 Derek Haber. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
