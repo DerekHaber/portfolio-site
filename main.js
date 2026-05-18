@@ -188,3 +188,105 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.08, rootMargin: '0px 0px -36px 0px' });
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+
+/* ===========================
+   Upcoming Events Loader
+   =========================== */
+const eventsContainer = document.getElementById('eventsContainer');
+
+function escapeHtml(str) {
+    return String(str).replace(/[&<>"']/g, c => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    }[c]));
+}
+
+function formatDateParts(iso) {
+    // Parse as local date to avoid TZ shifting YYYY-MM-DD by a day
+    const [y, m, d] = iso.split('-').map(Number);
+    const dt = new Date(y, m - 1, d);
+    return {
+        month: dt.toLocaleString('en-US', { month: 'short' }),
+        day: String(dt.getDate()).padStart(2, '0'),
+        year: dt.getFullYear()
+    };
+}
+
+function formatRange(startIso, endIso) {
+    if (!endIso || endIso === startIso) return null;
+    const [sy, sm, sd] = startIso.split('-').map(Number);
+    const [ey, em, ed] = endIso.split('-').map(Number);
+    const start = new Date(sy, sm - 1, sd);
+    const end   = new Date(ey, em - 1, ed);
+    const sameMonth = sy === ey && sm === em;
+    const sMon = start.toLocaleString('en-US', { month: 'short' });
+    const eMon = end.toLocaleString('en-US', { month: 'short' });
+    if (sameMonth) return `${sMon} ${start.getDate()}–${end.getDate()}, ${ey}`;
+    return `${sMon} ${start.getDate()} – ${eMon} ${end.getDate()}, ${ey}`;
+}
+
+function renderEvents(list) {
+    if (!list.length) {
+        eventsContainer.innerHTML =
+            '<div class="events-empty mono">No upcoming events on the calendar — check back soon.</div>';
+        return;
+    }
+
+    eventsContainer.innerHTML = list.map(ev => {
+        const dp    = formatDateParts(ev.date);
+        const range = formatRange(ev.date, ev.endDate);
+        const name  = escapeHtml(ev.name || '');
+        const venue = escapeHtml(ev.event || '');
+        const loc   = ev.location ? escapeHtml(ev.location) : '';
+        const role  = ev.role ? `<span class="event-role">${escapeHtml(ev.role)}</span>` : '';
+        const desc  = ev.description ? `<p class="event-desc">${escapeHtml(ev.description)}</p>` : '';
+        const link  = ev.url
+            ? `<a href="${escapeHtml(ev.url)}" target="_blank" rel="noopener" class="event-link">Details →</a>`
+            : '';
+        const locLine = loc ? `<span class="event-location">${loc}</span>` : '';
+        const rangeLine = range ? `<div class="event-venue mono" style="font-size:0.72rem;letter-spacing:0.04em;margin-top:2px;">${range}</div>` : '';
+
+        return `
+            <article class="event-card">
+                <div class="event-date">
+                    <span class="event-date-month">${dp.month}</span>
+                    <span class="event-date-day">${dp.day}</span>
+                    <span class="event-date-year">${dp.year}</span>
+                </div>
+                <div class="event-body">
+                    <div class="event-meta">${role}${locLine}</div>
+                    <h4 class="event-name">${name}</h4>
+                    <div class="event-venue">${venue}</div>
+                    ${rangeLine}
+                    ${desc}
+                </div>
+                ${link}
+            </article>
+        `;
+    }).join('');
+}
+
+fetch('events.json', { cache: 'no-cache' })
+    .then(r => {
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        return r.json();
+    })
+    .then(data => {
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        const upcoming = (data.events || [])
+            .filter(ev => {
+                const endIso = ev.endDate || ev.date;
+                const [y, m, d] = endIso.split('-').map(Number);
+                return new Date(y, m - 1, d) >= today;
+            })
+            .sort((a, b) => a.date.localeCompare(b.date));
+
+        renderEvents(upcoming);
+    })
+    .catch(err => {
+        console.error('Failed to load events:', err);
+        eventsContainer.innerHTML =
+            '<div class="events-empty mono">Unable to load schedule.</div>';
+    });
