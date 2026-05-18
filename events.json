@@ -1,0 +1,26 @@
+{
+    "_comment": "Edit this file to update upcoming talks & events. Entries are sorted by date automatically; past events (endDate before today) are hidden. Required: name, event, date (YYYY-MM-DD), location. Optional: endDate (YYYY-MM-DD), role, url, description.",
+
+    "events": [
+        {
+            "name": "Example Talk Title",
+            "event": "Example Conference 2026",
+            "role": "Speaker",
+            "date": "2026-08-12",
+            "endDate": "2026-08-14",
+            "location": "Las Vegas, NV",
+            "url": "https://example.com",
+            "description": "Short description of the talk or what you'll be presenting."
+        },
+        {
+            "name": "Attending DEF CON 34",
+            "event": "DEF CON 34",
+            "role": "Attendee",
+            "date": "2026-08-06",
+            "endDate": "2026-08-09",
+            "location": "Las Vegas, NV",
+            "url": "https://defcon.org",
+            "description": ""
+        }
+    ]
+}
