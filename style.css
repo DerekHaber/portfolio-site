@@ -609,6 +609,132 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ===========================
+   Speaking / Events
+   =========================== */
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.events-loading,
+.events-empty {
+    padding: 24px 28px;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    text-align: center;
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+}
+
+.event-card {
+    display: grid;
+    grid-template-columns: 110px 1fr auto;
+    gap: 28px;
+    align-items: center;
+    padding: 22px 28px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: border-color var(--transition), transform var(--transition);
+}
+
+.event-card:hover {
+    border-color: rgba(34, 211, 238, 0.2);
+    transform: translateX(4px);
+}
+
+.event-date {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-left: 2px solid var(--accent);
+    padding-left: 14px;
+}
+
+.event-date-month {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.event-date-day {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.event-date-year {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+}
+
+.event-body { min-width: 0; }
+
+.event-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+}
+
+.event-role {
+    display: inline-block;
+    padding: 2px 8px;
+    background: var(--accent-dim);
+    color: var(--accent);
+    border: 1px solid rgba(34, 211, 238, 0.14);
+    border-radius: 3px;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.event-location {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+}
+
+.event-name {
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+}
+
+.event-venue {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.event-desc {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-top: 8px;
+    max-width: none;
+}
+
+.event-link {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+    transition: opacity var(--transition);
+}
+.event-link:hover { opacity: 0.65; }
+
+/* ===========================
    Publications
    =========================== */
 .pub-section { margin-bottom: 52px; }
@@ -820,4 +946,20 @@ a { color: inherit; text-decoration: none; }
 
     .footer-inner { flex-direction: column; align-items: flex-start; }
     .footer-links { gap: 16px; }
+
+    .event-card {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 20px;
+    }
+    .event-date {
+        flex-direction: row;
+        align-items: baseline;
+        gap: 8px;
+        border-left: none;
+        border-top: 2px solid var(--accent);
+        padding-left: 0;
+        padding-top: 10px;
+    }
+    .event-date-day { font-size: 1.2rem; }
 }
