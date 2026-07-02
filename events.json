@@ -3,14 +3,14 @@
 
     "events": [
         {
-            "name": "Submitting CFP",
+            "name": "Adversarial Empathy: Staying Irreplaceable in the Age of AI",
             "event": "Wild West Hackin' Fest - Deadwood",
             "role": "Speaker",
             "date": "2026-10-07",
             "endDate": "2026-10-09",
             "location": "Deadwood, SD",
             "url": "https://wildwesthackinfest.com/wild-west-hackin-fest-deadwood-2026/",
-            "description": "Abstract to come"
+            "description": "As AI reshapes offensive security, the operators who remain truly irreplaceable won't be racing against frontier LLMs—they'll be orchestrating them. Frontier models are increasingly capable at pattern-matching known vulnerability classes, but they stumble where adversarial empathy lives. They lack the capacity to understand why an application was built the way it was, how its developers reasoned through tradeoffs, and where structural assumptions hide exploitable gaps. This empathy is where humans excel. This talk makes the case for an application-first methodology designed to bulletproof your value, built on a single mandate: explanation must precede exploitation. Before attempting to break a system, the operator becomes a temporary expert in it by internalizing its role model, mapping the full lifecycle of its session tokens, and reconstructing the intent behind its design. That contextual mastery is exactly what AI tooling cannot replicate. It’s the pivot point where human operators elevate themselves into indispensable force multipliers. Through real-world examples of where frontier LLMs hit a wall, and how deep application knowledge unlocked the path forward, we'll examine why many flaws—such as authorization controls—remain a persistent blind spot for AI. We'll explore how the human ability to hold context, reason about intent, and chain disparate insights compounds into critical findings that models simply cannot reach. You'll leave with a practical roadmap for cultivating this application-first mindset and a clear strategy to invest your judgment. As the tooling around you inevitably improves, this approach ensures you don't just keep up—you become the irreplaceable engine driving the exploit."
         }
     ]
 }
